@@ -1,0 +1,539 @@
+{
+	"info": {
+		"_postman_id": "1372e73c-c0c4-4599-8345-565e1e1ac747",
+		"name": "quizApp Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29365249"
+	},
+	"item": [
+		{
+			"name": "Question",
+			"item": [
+				{
+					"name": "questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/allQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"allQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/category/Math",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"category",
+								"Math"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createQuiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/question/generate?categoryName=Math&numQuestions=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"generate"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "Math"
+								},
+								{
+									"key": "numQuestions",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionTitle\": \"Again16\",\r\n    \"option1\": \"What is the square root of 64?\",\r\n    \"option2\": \"4\",\r\n    \"option3\": \"8\",\r\n    \"option4\": \"12\",\r\n    \"rightAnswer\": \"8\",\r\n    \"difficultyLevel\": \"Easy\",\r\n    \"category\": \"Math\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionByIds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[3,5,6]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/getQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"getQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getScore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"8\"\r\n    },\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"8\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/question/getScore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"question",
+								"getScore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Question apiGateway",
+			"item": [
+				{
+					"name": "questions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/allQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"allQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/category/Math",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"category",
+								"Math"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createQuiz",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/generate?categoryName=Math&numQuestions=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"generate"
+							],
+							"query": [
+								{
+									"key": "categoryName",
+									"value": "Math"
+								},
+								{
+									"key": "numQuestions",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add question",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"questionTitle\": \"Again16\",\r\n    \"option1\": \"What is the square root of 64?\",\r\n    \"option2\": \"4\",\r\n    \"option3\": \"8\",\r\n    \"option4\": \"12\",\r\n    \"rightAnswer\": \"8\",\r\n    \"difficultyLevel\": \"Easy\",\r\n    \"category\": \"Math\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionByIds",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[3,5,6]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/getQuestions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"getQuestions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getScore",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"8\"\r\n    },\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"8\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/question-service/question/getScore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"question-service",
+								"question",
+								"getScore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"Math\",\r\n    \"numQuestions\" : 3,\r\n    \"title\" : \"Maths quiz 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/quiz/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionsbyQuizId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"Math\",\r\n    \"numQuestions\" : 3,\r\n    \"title\" : \"Maths quiz 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/quiz/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"quiz",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitQuiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"8\"\r\n    },\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"8\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8090/quiz/submit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"quiz",
+								"submit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quiz apiGateway",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"Math\",\r\n    \"numQuestions\" : 3,\r\n    \"title\" : \"Maths quiz 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/quiz-service/quiz/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"quiz-service",
+								"quiz",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getQuestionsbyQuizId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"categoryName\" : \"Math\",\r\n    \"numQuestions\" : 3,\r\n    \"title\" : \"Maths quiz 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/quiz-service/quiz/get/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"quiz-service",
+								"quiz",
+								"get",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "submitQuiz",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\":5,\r\n        \"response\":\"8\"\r\n    },\r\n    {\r\n        \"id\":6,\r\n        \"response\":\"8\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8765/quiz-service/quiz/submit/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8765",
+							"path": [
+								"quiz-service",
+								"quiz",
+								"submit",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
