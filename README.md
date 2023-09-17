@@ -21,6 +21,6 @@ All different services are running on the below ports:
 - Api-Gateway : http://localhost:8765/
 - PostgreSQL : jdbc:postgresql://localhost:5432/
 - Quiz Microservice : http://localhost:8090/
-- Question Microservice instance 2: http://localhost:8080/ (default port)
+- Question Microservice instance 1: http://localhost:8080/ (default port)
 - Question Microservice instance 2 : http://localhost:8080/ 
 
